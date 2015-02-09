@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+<div class="text-center">
+<h2>Informacion del permiso</h2>
+</div>
+<div class="row"> 
+  <div class="col-md-3 center-block no-float ">
+  <div class="panel panel-default">
+    <div class="panel-body">
+
+<p>
+ <h3> <strong>Nombre:</strong></h3>
+  <h4>
+  <%= @permission.nombre %>
+  </h4>
+</p>
+
+<p>
+<h3>  <strong>Descripcion:</strong></h3>
+  <h4>  
+  <%= @permission.descripcion %>
+	</h4>
+</p>
+
+<%= link_to 'Editar', edit_permission_path(@permission) %> |
+<%= link_to 'Volver', permissions_path %>
+</div></div>
+</div></div>

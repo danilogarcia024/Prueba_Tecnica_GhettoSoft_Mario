@@ -1,0 +1,42 @@
+<div class="row"> 
+  <div class="col-md-3 center-block no-float">
+
+<%= form_for(@user_permission, html: {role:"form"}) do |f| %>
+
+  <% if @user_permission.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user_permission.errors.count, "error") %> prohibited this user_permission from being saved:</h2>
+
+      <ul>
+      <% @user_permission.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="panel panel-default">
+    <div class="panel-body">
+
+      <div class="form-inputs">
+
+      <div class="form-group">
+    <%= f.label "Usuario" %><br>
+    <%= f.select :user_id ,options_from_collection_for_select(@users,'id','full_name', @user_permission.user.nil? ? nil : @user_permission.user.id), autofocus: true, class: "form-control"%>
+
+  </div>
+  <div class="form-group">
+    <%= f.label "Permiso" %><br>
+    <%=f.select :permision_id, options_from_collection_for_select(@permissions,'id','nombre', @user_permission.permission.nil? ? nil : @user_permission.permission.id),class: "form-control"%>
+    </div>
+  <div class="form-group">
+  <%= f.submit "Enviar", class: "btn  btn-primary" %>
+  </div>
+    <!%= f.select(:permision_id) do %>
+    <!%@usuarios.each do |c| -%>
+    <!%= content_tag(:option, c.Nombre, value: c.id) %>
+    <!% end %>
+    <!% end %>  
+   
+   
+<% end %>
+</div></div>

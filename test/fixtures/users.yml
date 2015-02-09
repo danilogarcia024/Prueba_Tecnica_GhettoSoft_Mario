@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Nombre: Mario
+  Apellido: Vizcaino
+  Cedula: 123456
+  Email: mvizcaino@ghettosoft.co
+
+two:
+  Nombre: 
+  Apellido: 
+  Cedula: 
+  Email: 

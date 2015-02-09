@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+<div class="text-center">
+	<h2>Informacion del usuario <%=@user_permission.user_id%></h2>
+</div>
+</br>
+<div class="row"> 
+  <div class="col-md-3 center-block no-float ">
+<div class="container">
+  <h5><strong>Permiso:</strong>
+  <%= @user_permission.permision_id %></h5>
+<h5><strong>Creado el:</strong>
+  <%= @user_permission.created_at %></h5>
+  
+</br></br></br>
+<%= link_to 'Edit', edit_user_permission_path(@user_permission) %> |
+<%= link_to 'Back', user_permissions_path %>
+</div>
+
+</div></div>

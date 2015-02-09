@@ -1,0 +1,32 @@
+<div class="text-center">
+<h1>Lista de permisos por usuario</h1>
+</div>
+<div class="row"> 
+  <div class="col-md-3 center-block no-float">
+
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>Nombre del Usuario</th>
+      <th>Nombre del Permiso</th>
+      <th colspan="3" class="text-center">Opciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user_permissions.each do |user_permission| %>
+      <tr>
+        <td><%= user_permission.user.nil? ? '' : user_permission.user.full_name %></td>
+        <td><%= user_permission.permission.nil? ? '' : user_permission.permission.nombre %></td>
+        <td><%= link_to 'Mostrar Usuarios', user_permission %></td>
+        <td><%= link_to 'Editar', edit_user_permission_path(user_permission) %></td>
+        <td><%= link_to 'Eliminar', user_permission, method: :delete, data: { confirm: 'Confirmar' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Agregar Permiso a usuario', new_user_permission_path %>
+</div></div>
